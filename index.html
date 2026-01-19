@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Sands Adventures | Dubai Desert Safari Packages</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐪</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #F8F7F4;
+            --white: #FFFFFF;
+            --black: #1A1A1A;
+            --gray-100: #F3F2EF;
+            --gray-200: #E8E6E1;
+            --gray-400: #9C9A95;
+            --gray-600: #6B6963;
+            --gold: #C9A227;
+            --gold-light: #F5EED6;
+            --green: #0A8754;
+            --radius: 12px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--black);
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--black);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: var(--gray-100);
+            border-radius: 40px;
+            padding: 8px 16px;
+            gap: 12px;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .search-bar:focus-within {
+            background: var(--white);
+            border-color: var(--gold);
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            color: var(--gray-400);
+            flex-shrink: 0;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            color: var(--black);
+        }
+
+        .search-bar input::placeholder {
+            color: var(--gray-400);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(10, 135, 84, 0.3);
+        }
+
+        .whatsapp-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--white);
+            padding: 12px 24px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .filter-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .filter-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-chip {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--gray-400);
+        }
+
+        .filter-chip.active {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .filter-chip svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .section-count {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        /* Listings Grid */
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* Listing Card */
+        .listing-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .listing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .listing-image {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+        }
+
+        .listing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .listing-card:hover .listing-image img {
+            transform: scale(1.05);
+        }
+
+        .listing-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--white);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .listing-badge.bestseller {
+            background: var(--gold);
+            color: white;
+        }
+
+        .listing-badge.popular {
+            background: var(--black);
+            color: white;
+        }
+
+        .listing-save {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .listing-save:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .listing-save svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .listing-content {
+            padding: 16px;
+        }
+
+        .listing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .listing-title {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.3;
+            flex: 1;
+            margin-right: 12px;
+        }
+
+        .listing-rating {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .listing-rating svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--gold);
+        }
+
+        .listing-rating span {
+            color: var(--gray-600);
+            font-weight: 400;
+        }
+
+        .listing-duration {
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .listing-includes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .listing-tag {
+            background: var(--gray-100);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        .listing-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .listing-price {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .listing-price span {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        .listing-book {
+            background: var(--black);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .listing-book:hover {
+            background: #333;
+        }
+
+        /* Luxury Section */
+        .luxury-section {
+            background: linear-gradient(135deg, #F5E6B8 0%, #F0DDA0 50%, #F5E6B8 100%);
+            margin: 0 -24px;
+            padding: 48px 24px;
+            border-top: 3px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+            position: relative;
+        }
+
+        .luxury-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .luxury-section .section-header {
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .luxury-section .section-title {
+            color: #8B7520;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .luxury-section .listings-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .luxury-section .listing-card {
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(201, 162, 39, 0.15);
+        }
+
+        .luxury-section .listing-card:hover {
+            box-shadow: 0 8px 24px rgba(201, 162, 39, 0.25);
+        }
+
+        .luxury-section .listing-book {
+            background: var(--gold);
+        }
+
+        .luxury-section .listing-book:hover {
+            background: #B8922A;
+        }
+
+        /* Reviews Preview */
+        .reviews-preview {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .review-avatars {
+            display: flex;
+        }
+
+        .review-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -8px;
+            object-fit: cover;
+        }
+
+        .review-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .review-text {
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--white);
+            padding: 24px;
+            margin: 0 -24px 32px;
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trust-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gray-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--green);
+        }
+
+        .trust-text {
+            font-size: 14px;
+        }
+
+        .trust-text strong {
+            display: block;
+            font-weight: 600;
+        }
+
+        .trust-text span {
+            color: var(--gray-600);
+            font-size: 12px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: var(--shadow);
+        }
+
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4px;
+            aspect-ratio: 2/1;
+        }
+
+        .modal-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-gallery-side {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .modal-gallery-side img {
+            flex: 1;
+        }
+
+        .modal-content {
+            padding: 24px;
+        }
+
+        .modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .modal-meta svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .modal-section {
+            margin-bottom: 24px;
+        }
+
+        .modal-section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .modal-description {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .modal-inclusions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .modal-inclusion {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .modal-inclusion svg {
+            width: 18px;
+            height: 18px;
+            color: var(--green);
+        }
+
+        .modal-timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .modal-timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .timeline-time {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gold);
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        .modal-reviews {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .review-card {
+            background: var(--gray-100);
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .review-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .review-date {
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 8px;
+        }
+
+        .review-stars svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--gold);
+        }
+
+        .review-body {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .modal-footer {
+            position: sticky;
+            bottom: 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-price {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .modal-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        .modal-book {
+            background: var(--green);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .modal-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 135, 84, 0.3);
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--gray-600);
+        }
+
+        .no-results svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 16px;
+            color: var(--gray-400);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 32px 24px;
+            margin-top: 64px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--black);
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--black);
+        }
+
+        .footer-copyright {
+            color: var(--gray-600);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+
+        /* Large Tablets and below (1024px) */
+        @media (max-width: 1024px) {
+            .main {
+                padding: 24px 16px;
+            }
+
+            .listings-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
+
+        /* Tablets and below (768px) */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 16px;
+            }
+
+            .header-inner {
+                flex-wrap: wrap;
+            }
+
+            .search-container {
+                order: 3;
+                flex: 100%;
+                max-width: 100%;
+                margin-top: 12px;
+            }
+
+            .whatsapp-btn span {
+                display: none;
+            }
+
+            .whatsapp-btn {
+                padding: 12px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            .filter-bar {
+                padding: 12px 16px;
+            }
+
+            .filter-chip {
+                padding: 10px 16px;
+                min-height: 44px;
+            }
+
+            .main {
+                padding: 24px 16px;
+            }
+
+            .section {
+                margin-bottom: 32px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .trust-bar {
+                display: none !important;
+            }
+
+            .listings-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .listing-book {
+                padding: 12px 24px;
+                min-height: 44px;
+            }
+
+            .modal {
+                max-height: 95vh;
+            }
+
+            .modal-content {
+                padding: 20px 16px;
+            }
+
+            .modal-title {
+                font-size: 22px;
+            }
+
+            .modal-section h3 {
+                font-size: 16px;
+            }
+
+            .modal-gallery {
+                grid-template-columns: 1fr;
+                aspect-ratio: auto;
+            }
+
+            .modal-gallery-side {
+                flex-direction: row;
+            }
+
+            .modal-inclusions {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .modal-price {
+                font-size: 20px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .modal-book {
+                width: 100%;
+                justify-content: center;
+                min-height: 48px;
+            }
+
+            .luxury-section {
+                margin: 0 -16px;
+                padding: 32px 16px;
+            }
+
+            .footer {
+                padding: 24px 16px;
+                margin-top: 48px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .footer-links {
+                gap: 20px;
+                justify-content: center;
+            }
+        }
+
+        /* Small Mobile (480px and below) */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .header {
+                padding: 10px 12px;
+            }
+
+            .filter-bar {
+                padding: 10px 12px;
+            }
+
+            .filter-chip {
+                font-size: 13px;
+                padding: 8px 14px;
+            }
+
+            .main {
+                padding: 16px 12px;
+            }
+
+            .section {
+                margin-bottom: 24px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+
+            .section-count {
+                font-size: 13px;
+            }
+
+            .trust-bar {
+                gap: 8px;
+                padding: 12px;
+                margin-bottom: 16px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 6px;
+                padding: 8px 4px;
+            }
+
+            .trust-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .trust-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .trust-text {
+                font-size: 11px;
+            }
+
+            .trust-text strong {
+                font-size: 12px;
+                line-height: 1.2;
+            }
+
+            .listing-card {
+                border-radius: 10px;
+            }
+
+            .listing-content {
+                padding: 14px;
+            }
+
+            .listing-title {
+                font-size: 16px;
+            }
+
+            .listing-rating {
+                font-size: 13px;
+            }
+
+            .listing-price {
+                font-size: 16px;
+            }
+
+            .listing-book {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+
+            .modal {
+                border-radius: 10px;
+                max-height: 100vh;
+            }
+
+            .modal-overlay {
+                padding: 0;
+            }
+
+            .modal-content {
+                padding: 16px 12px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+            }
+
+            .modal-section h3 {
+                font-size: 15px;
+            }
+
+            .modal-description {
+                font-size: 14px;
+            }
+
+            .modal-price {
+                font-size: 18px;
+            }
+
+            .modal-book {
+                font-size: 15px;
+                padding: 12px 24px;
+            }
+
+            .luxury-section {
+                margin: 0 -12px;
+                padding: 24px 12px;
+            }
+
+            .footer {
+                padding: 20px 12px;
+                margin-top: 32px;
+            }
+
+            .footer-links {
+                gap: 16px;
+            }
+
+            .footer-links a {
+                font-size: 13px;
+            }
+
+            .footer-copyright {
+                font-size: 13px;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .whatsapp-btn {
+                min-width: 48px;
+                min-height: 48px;
+            }
+
+            .filter-chip {
+                min-height: 48px;
+                padding: 12px 18px;
+            }
+
+            .listing-book {
+                min-height: 48px;
+            }
+
+            .listing-save {
+                width: 44px;
+                height: 44px;
+            }
+
+            .modal-close {
+                width: 44px;
+                height: 44px;
+            }
+
+            .modal-book {
+                min-height: 52px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">Golden<span>Sands</span></a>
+
+            <div class="search-container">
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search safaris, camping, activities...">
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://wa.me/971508591060" class="whatsapp-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-inner">
+            <button class="filter-chip active" data-filter="all">All Packages</button>
+            <button class="filter-chip" data-filter="day">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                Day Safari
+            </button>
+            <button class="filter-chip" data-filter="overnight">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                Overnight
+            </button>
+            <button class="filter-chip" data-filter="adventure">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Adventure
+            </button>
+            <button class="filter-chip" data-filter="family">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Family
+            </button>
+            <button class="filter-chip" data-filter="under200">Under 200 AED</button>
+            <button class="filter-chip" data-filter="under500">Under 500 AED</button>
+        </div>
+    </div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-item">
+            <div class="trust-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <div class="trust-text">
+                <strong>4,200+ Happy Guests</strong>
+                <span>Last 12 months</span>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+            </div>
+            <div class="trust-text">
+                <strong>4.9 Average Rating</strong>
+                <span>Google Reviews</span>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <div class="trust-text">
+                <strong>Free Cancellation</strong>
+                <span>Up to 24 hours before</span>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+            <div class="trust-text">
+                <strong>Hotel Pickup</strong>
+                <span>Anywhere in Dubai</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Best Value Section -->
+        <section class="section" id="valueSection">
+            <div class="section-header">
+                <h2 class="section-title">Best Value Packages</h2>
+                <span class="section-count" id="valueCount">8 packages</span>
+            </div>
+            <div class="listings-grid" id="valueListings">
+                <!-- Card 1 -->
+                <div class="listing-card" data-type="day adventure family" data-price="149" onclick="openModal('morning')">
+                    <div class="listing-image">
+                        <img src="morning-safari.png" alt="Morning Desert Safari">
+                        <span class="listing-badge bestseller">Bestseller</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Morning Desert Safari</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.8 <span>(892)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">4 hours • Morning departure</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Dune bashing</span>
+                            <span class="listing-tag">Sandboarding</span>
+                            <span class="listing-tag">Camel ride</span>
+                            <span class="listing-tag">Refreshments</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">149 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="listing-card" data-type="day adventure family" data-price="199" onclick="openModal('evening')">
+                    <div class="listing-image">
+                        <img src="evening-safari.png" alt="Evening Desert Safari">
+                        <span class="listing-badge popular">Most Popular</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Evening Desert Safari with BBQ</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.9 <span>(2,156)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">6 hours • Sunset timing</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Dune bashing</span>
+                            <span class="listing-tag">BBQ dinner</span>
+                            <span class="listing-tag">Belly dance</span>
+                            <span class="listing-tag">+3 more</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">199 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="listing-card" data-type="adventure" data-price="249" onclick="openModal('quad')">
+                    <div class="listing-image">
+                        <img src="quad-bike.png" alt="Quad Bike Desert Adventure">
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Quad Bike Safari Adventure</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.7 <span>(567)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">2 hours • Morning or evening</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Quad bike</span>
+                            <span class="listing-tag">Safety gear</span>
+                            <span class="listing-tag">Guide</span>
+                            <span class="listing-tag">Photos</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">249 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="listing-card" data-type="day family" data-price="179" onclick="openModal('camel')">
+                    <div class="listing-image">
+                        <img src="camel-trek.png" alt="Camel Desert Experience">
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Camel Trekking Experience</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.6 <span>(423)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">3 hours • Sunrise or sunset</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">45min ride</span>
+                            <span class="listing-tag">Arabic coffee</span>
+                            <span class="listing-tag">Dates</span>
+                            <span class="listing-tag">Photos</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">179 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="listing-card" data-type="overnight family" data-price="399" onclick="openModal('overnight')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?q=80&w=1200" alt="Overnight Desert Camp">
+                        <span class="listing-badge">New</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Overnight Desert Camping</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.9 <span>(312)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">20 hours • 4PM - 12PM next day</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">BBQ dinner</span>
+                            <span class="listing-tag">Breakfast</span>
+                            <span class="listing-tag">Tent stay</span>
+                            <span class="listing-tag">+4 more</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">399 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="listing-card" data-type="day adventure" data-price="189" onclick="openModal('buggy')">
+                    <div class="listing-image">
+                        <img src="dune-buggy.png" alt="Dune Buggy Adventure">
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Self-Drive Dune Buggy</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.8 <span>(289)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">1 hour • Multiple slots</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Dune buggy</span>
+                            <span class="listing-tag">Safety gear</span>
+                            <span class="listing-tag">Instructor</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">189 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="listing-card" data-type="day family" data-price="299" onclick="openModal('sunset-bbq')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=1200" alt="Sunset Safari with BBQ">
+                        <span class="listing-badge">Value Pick</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Premium Sunset Safari</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.8 <span>(445)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">5 hours • Small group (max 12)</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Dune bashing</span>
+                            <span class="listing-tag">Premium BBQ</span>
+                            <span class="listing-tag">Live shows</span>
+                            <span class="listing-tag">+4 more</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">299 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="listing-card" data-type="adventure" data-price="349" onclick="openModal('sandboard')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1200" alt="Sandboarding Experience">
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Sandboarding & Quad Combo</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.7 <span>(198)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">3 hours • Action-packed</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Sandboarding</span>
+                            <span class="listing-tag">Quad bike</span>
+                            <span class="listing-tag">Refreshments</span>
+                            <span class="listing-tag">Photos</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">349 AED <span>/ person</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Luxury Section -->
+        <section class="luxury-section" id="luxurySection">
+            <div class="section-header">
+                <h2 class="section-title">Luxury & Private Experiences</h2>
+                <span class="section-count" id="luxuryCount">4 packages</span>
+            </div>
+            <div class="listings-grid" id="luxuryListings">
+                <!-- Luxury Card 1 -->
+                <div class="listing-card" data-type="day family" data-price="1499" onclick="openModal('private-sunset')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=1200" alt="Private Sunset Safari">
+                        <span class="listing-badge bestseller">Top Rated</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Private Sunset Safari</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                5.0 <span>(89)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">6 hours • Private vehicle • Up to 6 guests</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Private Land Cruiser</span>
+                            <span class="listing-tag">VIP camp</span>
+                            <span class="listing-tag">Premium dinner</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-avatars">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=1" alt="">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=2" alt="">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=3" alt="">
+                            </div>
+                            <span class="review-text">"Best experience in Dubai!" - Sarah K.</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">1,499 AED <span>/ group</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Card 2 -->
+                <div class="listing-card" data-type="overnight" data-price="3999" onclick="openModal('glamping')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1631049035182-249067d7618e?q=80&w=1200" alt="Luxury Desert Glamping">
+                        <span class="listing-badge popular">Exclusive</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Luxury Desert Glamping</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                5.0 <span>(47)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">22 hours • Private camp • Up to 4 guests</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">King bed tent</span>
+                            <span class="listing-tag">Private chef</span>
+                            <span class="listing-tag">Stargazing</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-avatars">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=4" alt="">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=5" alt="">
+                            </div>
+                            <span class="review-text">"Proposed here. She said yes!" - James M.</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">3,999 AED <span>/ couple</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Card 3 -->
+                <div class="listing-card" data-type="adventure" data-price="2499" onclick="openModal('heritage')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1200" alt="Heritage Falcon Experience">
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Heritage Falcon Safari</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                4.9 <span>(63)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">5 hours • Private • Up to 8 guests</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Falcon show</span>
+                            <span class="listing-tag">Vintage Land Rover</span>
+                            <span class="listing-tag">Arabic feast</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-avatars">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=7" alt="">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=8" alt="">
+                            </div>
+                            <span class="review-text">"Truly authentic experience" - Ahmed R.</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">2,499 AED <span>/ group</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Card 4 -->
+                <div class="listing-card" data-type="day adventure" data-price="8999" onclick="openModal('helicopter')">
+                    <div class="listing-image">
+                        <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?q=80&w=1200" alt="Helicopter Desert Safari">
+                        <span class="listing-badge">Ultimate</span>
+                        <div class="listing-save">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-header">
+                            <h3 class="listing-title">Helicopter Desert Experience</h3>
+                            <div class="listing-rating">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                5.0 <span>(23)</span>
+                            </div>
+                        </div>
+                        <p class="listing-duration">4 hours • Private helicopter • Up to 4 guests</p>
+                        <div class="listing-includes">
+                            <span class="listing-tag">Helicopter ride</span>
+                            <span class="listing-tag">Private camp</span>
+                            <span class="listing-tag">Champagne</span>
+                        </div>
+                        <div class="reviews-preview">
+                            <div class="review-avatars">
+                                <img class="review-avatar" src="https://i.pravatar.cc/100?img=10" alt="">
+                            </div>
+                            <span class="review-text">"Once in a lifetime" - Victoria L.</span>
+                        </div>
+                        <div class="listing-footer">
+                            <div class="listing-price">8,999 AED <span>/ group</span></div>
+                            <button class="listing-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" onclick="closeModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="modal-gallery">
+                <img id="modalMainImg" src="" alt="">
+                <div class="modal-gallery-side">
+                    <img id="modalImg2" src="" alt="">
+                    <img id="modalImg3" src="" alt="">
+                </div>
+            </div>
+            <div class="modal-content">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-meta">
+                    <span id="modalDuration"></span>
+                    <span>•</span>
+                    <span id="modalRating"></span>
+                </div>
+
+                <div class="modal-section">
+                    <h3>About this experience</h3>
+                    <p class="modal-description" id="modalDescription"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>What's included</h3>
+                    <div class="modal-inclusions" id="modalInclusions"></div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Itinerary</h3>
+                    <div class="modal-timeline" id="modalTimeline"></div>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Guest Reviews</h3>
+                    <div class="modal-reviews" id="modalReviews"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price" id="modalPrice"></div>
+                <a href="https://wa.me/971508591060" class="modal-book">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Book via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Package data
+        const packages = {
+            'morning': {
+                title: 'Morning Desert Safari',
+                duration: '4 hours • 6:00 AM - 10:00 AM',
+                rating: '4.8 (892 reviews)',
+                price: '149 AED per person',
+                description: 'Experience the serene beauty of the Dubai desert in the cool morning hours. Watch the sunrise paint the dunes golden as you enjoy thrilling dune bashing, sandboarding, and a peaceful camel ride. Perfect for early birds and photographers wanting to capture the desert at its most magical.',
+                images: [
+                    'morning-safari.png',
+                    'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=600',
+                    'https://images.unsplash.com/photo-1547234935-80c7145ec969?q=80&w=600'
+                ],
+                inclusions: ['Dune bashing (30 mins)', 'Sandboarding', 'Camel ride (15 mins)', 'Refreshments & water', 'Hotel pickup & drop-off', 'Professional guide'],
+                timeline: [
+                    { time: '5:30 AM', text: 'Hotel pickup in comfortable 4x4 Land Cruiser' },
+                    { time: '6:00 AM', text: 'Arrive at desert, watch sunrise over the dunes' },
+                    { time: '6:30 AM', text: 'Thrilling dune bashing experience' },
+                    { time: '7:30 AM', text: 'Sandboarding and camel ride' },
+                    { time: '9:00 AM', text: 'Refreshments at desert camp' },
+                    { time: '10:00 AM', text: 'Return to hotel' }
+                ],
+                reviews: [
+                    { name: 'Michael T.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=11', text: 'Amazing sunrise experience! The dune bashing was thrilling but not scary. Our driver Ahmed was very professional. Highly recommend the morning slot to avoid the heat.' },
+                    { name: 'Priya S.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=12', text: 'Best value for money! Got picked up on time, great photos at sunrise. The camel ride was short but fun. Perfect for those short on time.' }
+                ]
+            },
+            'evening': {
+                title: 'Evening Desert Safari with BBQ',
+                duration: '6 hours • 3:30 PM - 9:30 PM',
+                rating: '4.9 (2,156 reviews)',
+                price: '199 AED per person',
+                description: 'Our most popular package! Experience the magic of the Arabian desert as the sun sets over the golden dunes. Enjoy heart-pumping dune bashing, traditional activities, a delicious BBQ dinner, and mesmerizing entertainment including belly dance and Tanoura shows.',
+                images: [
+                    'evening-safari.png',
+                    'https://images.unsplash.com/photo-1518548235008-15c2e3846e3c?q=80&w=600',
+                    'https://images.unsplash.com/photo-1528702748617-c64d49f918af?q=80&w=600'
+                ],
+                inclusions: ['Dune bashing (45 mins)', 'Sandboarding', 'Camel ride', 'BBQ buffet dinner', 'Unlimited soft drinks', 'Belly dance show', 'Tanoura show', 'Henna painting', 'Shisha', 'Hotel pickup & drop-off'],
+                timeline: [
+                    { time: '3:30 PM', text: 'Hotel pickup in 4x4 Land Cruiser' },
+                    { time: '4:30 PM', text: 'Arrive at desert, dune bashing begins' },
+                    { time: '5:30 PM', text: 'Photo stop at sunset point' },
+                    { time: '6:00 PM', text: 'Arrive at Bedouin camp, camel rides & sandboarding' },
+                    { time: '7:00 PM', text: 'BBQ dinner with live entertainment' },
+                    { time: '9:00 PM', text: 'Depart for hotel' }
+                ],
+                reviews: [
+                    { name: 'Emma W.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=13', text: 'Incredible experience from start to finish! The sunset was breathtaking and the BBQ dinner was delicious. The belly dance show was a highlight. Worth every dirham!' },
+                    { name: 'David L.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=14', text: 'Did many safaris on this trip and this was by far the best. Small group, friendly staff, great food. The dune bashing was intense in the best way possible!' }
+                ]
+            },
+            'overnight': {
+                title: 'Overnight Desert Camping',
+                duration: '20 hours • 4:00 PM - 12:00 PM next day',
+                rating: '4.9 (312 reviews)',
+                price: '399 AED per person',
+                description: 'Sleep under a blanket of stars in the Arabian desert. This complete desert experience includes everything from dune bashing to stargazing, with comfortable tent accommodation and both dinner and breakfast included. Wake up to a stunning desert sunrise.',
+                images: [
+                    'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1533873984035-25970ab07461?q=80&w=600',
+                    'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=600'
+                ],
+                inclusions: ['Dune bashing', 'Sandboarding & camel ride', 'BBQ dinner', 'Breakfast', 'Tent accommodation', 'Bedding & blankets', 'Entertainment shows', 'Stargazing session', 'Morning desert walk', 'Hotel pickup & drop-off'],
+                timeline: [
+                    { time: '4:00 PM', text: 'Hotel pickup' },
+                    { time: '5:00 PM', text: 'Dune bashing and sunset photos' },
+                    { time: '6:30 PM', text: 'Arrive at overnight camp, activities begin' },
+                    { time: '8:00 PM', text: 'BBQ dinner with entertainment' },
+                    { time: '10:00 PM', text: 'Stargazing and bonfire' },
+                    { time: '7:00 AM', text: 'Wake up for sunrise, morning desert walk' },
+                    { time: '8:30 AM', text: 'Breakfast at camp' },
+                    { time: '12:00 PM', text: 'Return to hotel' }
+                ],
+                reviews: [
+                    { name: 'Thomas & Maria', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=15', text: 'Our honeymoon highlight! Sleeping in the desert under the stars was magical. The staff made us feel so welcome. The sunrise was absolutely stunning.' },
+                    { name: 'Yuki M.', date: 'October 2024', avatar: 'https://i.pravatar.cc/100?img=16', text: 'I was worried about comfort but the tents were surprisingly nice! Clean bedding, peaceful night. The stargazing alone was worth it. Unforgettable experience.' }
+                ]
+            },
+            'quad': {
+                title: 'Quad Bike Safari Adventure',
+                duration: '2 hours',
+                rating: '4.7 (567 reviews)',
+                price: '249 AED per person',
+                description: 'Take control and ride your own quad bike across the stunning Dubai desert dunes. Perfect for adventure seekers who want to experience the desert at their own pace. Full safety briefing and equipment provided.',
+                images: [
+                    'quad-bike.png',
+                    'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=600',
+                    'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=600'
+                ],
+                inclusions: ['400cc quad bike', 'Safety helmet & goggles', 'Safety briefing', 'Professional instructor', 'Bottled water', 'Photos of your ride', 'Hotel transfer (optional +50 AED)'],
+                timeline: [
+                    { time: '0:00', text: 'Arrival and registration' },
+                    { time: '0:15', text: 'Safety briefing and equipment fitting' },
+                    { time: '0:30', text: 'Practice session in training area' },
+                    { time: '0:45', text: 'Desert ride begins - guided tour through dunes' },
+                    { time: '1:45', text: 'Return to base, refreshments' }
+                ],
+                reviews: [
+                    { name: 'Ryan K.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=17', text: 'So much fun! The bikes are powerful and well-maintained. Great for beginners - the training was thorough. Best adrenaline rush of my Dubai trip!' },
+                    { name: 'Sophie B.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=18', text: 'First time on a quad and I loved it! The guide was patient and helpful. Got some amazing photos. Definitely recommend!' }
+                ]
+            },
+            'camel': {
+                title: 'Camel Trekking Experience',
+                duration: '3 hours',
+                rating: '4.6 (423 reviews)',
+                price: '179 AED per person',
+                description: 'Experience the desert the traditional way - on camelback. This peaceful journey takes you through beautiful dune landscapes, just as Bedouins have traveled for centuries. Includes traditional Arabic refreshments.',
+                images: [
+                    'camel-trek.png',
+                    'https://images.unsplash.com/photo-1549944850-84e00be4203b?q=80&w=600',
+                    'https://images.unsplash.com/photo-1547234935-80c7145ec969?q=80&w=600'
+                ],
+                inclusions: ['45-minute camel ride', 'Arabic coffee & dates', 'Traditional photos in Arabic dress', 'Sunset/sunrise viewing', 'Bottled water', 'Hotel pickup & drop-off'],
+                timeline: [
+                    { time: '0:00', text: 'Hotel pickup' },
+                    { time: '0:45', text: 'Arrive at camel farm, meet your camel' },
+                    { time: '1:00', text: 'Begin camel trek through the dunes' },
+                    { time: '1:45', text: 'Photo stop at scenic viewpoint' },
+                    { time: '2:00', text: 'Arabic coffee and dates at Bedouin tent' },
+                    { time: '2:30', text: 'Return journey to hotel' }
+                ],
+                reviews: [
+                    { name: 'Linda G.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=19', text: 'A lovely, peaceful experience. Perfect for families - my kids (8 and 10) absolutely loved it. The camels were gentle and well-cared for.' },
+                    { name: 'Raj P.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=20', text: 'Much better than the quick camel rides at the tourist camps. This felt authentic and unhurried. Beautiful sunset views. Highly recommend.' }
+                ]
+            },
+            'buggy': {
+                title: 'Self-Drive Dune Buggy',
+                duration: '1 hour',
+                rating: '4.8 (289 reviews)',
+                price: '189 AED per person',
+                description: 'Drive your own powerful dune buggy across the desert terrain. These 2-seater buggies are perfect for couples or friends looking for an exhilarating desert adventure. No prior experience needed.',
+                images: [
+                    'dune-buggy.png',
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=600',
+                    'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=600'
+                ],
+                inclusions: ['2-seater dune buggy', 'Safety helmet & goggles', 'Safety briefing', 'Lead guide', 'Bottled water', 'Transfer available (+50 AED)'],
+                timeline: [
+                    { time: '0:00', text: 'Arrival and check-in' },
+                    { time: '0:10', text: 'Safety briefing and equipment' },
+                    { time: '0:20', text: 'Buggy familiarization' },
+                    { time: '0:30', text: 'Guided desert drive through dunes' },
+                    { time: '0:55', text: 'Return to base' }
+                ],
+                reviews: [
+                    { name: 'Mark & Julie', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=21', text: 'What a rush! The buggies are easy to drive and the course was exciting. Great date activity. Staff were friendly and professional.' },
+                    { name: 'Alex T.', date: 'October 2024', avatar: 'https://i.pravatar.cc/100?img=22', text: 'Better than quad biking IMO - more stable and you can bring a passenger. Good safety standards. Would do again!' }
+                ]
+            },
+            'sunset-bbq': {
+                title: 'Premium Sunset Safari',
+                duration: '5 hours • Small group (max 12)',
+                rating: '4.8 (445 reviews)',
+                price: '299 AED per person',
+                description: 'Our upgraded evening experience with smaller groups and premium service. Enjoy thrilling dune bashing at golden hour, followed by a gourmet BBQ dinner at our exclusive camp. Limited to 12 guests for a more intimate experience.',
+                images: [
+                    'https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1549944850-84e00be4203b?q=80&w=600',
+                    'https://images.unsplash.com/photo-1518548235008-15c2e3846e3c?q=80&w=600'
+                ],
+                inclusions: ['Extended dune bashing (45 mins)', 'Premium BBQ dinner', 'Unlimited soft drinks', 'Camel ride', 'Sandboarding', 'Henna painting', 'Live entertainment', 'Hotel pickup & drop-off'],
+                timeline: [
+                    { time: '3:00 PM', text: 'Hotel pickup in premium Land Cruiser' },
+                    { time: '4:00 PM', text: 'Arrive at desert for extended dune bashing' },
+                    { time: '5:00 PM', text: 'Sunset photo session at scenic viewpoint' },
+                    { time: '5:30 PM', text: 'Arrive at exclusive camp, welcome drinks' },
+                    { time: '6:00 PM', text: 'Activities: camel ride, sandboarding, henna' },
+                    { time: '7:00 PM', text: 'Premium BBQ dinner with live shows' },
+                    { time: '8:30 PM', text: 'Return transfer to hotel' }
+                ],
+                reviews: [
+                    { name: 'Rachel M.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=27', text: 'Worth the upgrade! Smaller group made such a difference. The sunset photos were incredible and the food was much better than expected.' },
+                    { name: 'Chris & Sam', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=28', text: 'We did the basic safari last year and this was leagues better. More personal attention, better food, nicer camp. Highly recommend paying extra.' }
+                ]
+            },
+            'sandboard': {
+                title: 'Sandboarding & Quad Combo',
+                duration: '3 hours • Action-packed',
+                rating: '4.7 (198 reviews)',
+                price: '349 AED per person',
+                description: 'The ultimate adventure combo for thrill-seekers. Start with an adrenaline-pumping quad bike session, then hit the dunes for sandboarding. Perfect for those who want action without the full safari experience.',
+                images: [
+                    'https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=600',
+                    'https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?q=80&w=600'
+                ],
+                inclusions: ['1-hour quad bike session', 'Sandboarding (unlimited runs)', 'All safety equipment', 'Professional instructor', 'Refreshments & water', 'Photos included', 'Hotel transfer (optional +50 AED)'],
+                timeline: [
+                    { time: '0:00', text: 'Arrival and registration' },
+                    { time: '0:15', text: 'Safety briefing for both activities' },
+                    { time: '0:30', text: 'Quad biking session through desert trails' },
+                    { time: '1:30', text: 'Break and refreshments' },
+                    { time: '1:45', text: 'Sandboarding instruction and practice' },
+                    { time: '2:00', text: 'Free sandboarding on various dunes' },
+                    { time: '2:45', text: 'Wrap up, photos, refreshments' }
+                ],
+                reviews: [
+                    { name: 'Jake L.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=29', text: 'Best combo deal! The quad was powerful and the sandboarding was a blast. Great for anyone who wants pure adventure without sitting through dinner shows.' },
+                    { name: 'Nina K.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=30', text: 'Perfect for our group of friends who wanted action. The instructor was patient with beginners. Sandboarding is harder than it looks but so fun!' }
+                ]
+            },
+            'private-sunset': {
+                title: 'Private Sunset Safari',
+                duration: '6 hours • Private vehicle • Up to 6 guests',
+                rating: '5.0 (89 reviews)',
+                price: '1,499 AED for the group',
+                description: 'Your own private desert adventure. Travel in a dedicated Land Cruiser with your personal driver and enjoy a VIP camp experience. No sharing with strangers - just you and your group enjoying the best the desert has to offer.',
+                images: [
+                    'https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1549944850-84e00be4203b?q=80&w=600',
+                    'https://images.unsplash.com/photo-1518548235008-15c2e3846e3c?q=80&w=600'
+                ],
+                inclusions: ['Private Land Cruiser', 'Personal driver/guide', 'Private seating at VIP camp', 'Premium BBQ dinner', 'Unlimited drinks', 'All activities included', 'Professional photography', 'Flexible timing'],
+                timeline: [
+                    { time: '3:00 PM', text: 'Private hotel pickup at your preferred time' },
+                    { time: '4:00 PM', text: 'Dune bashing tailored to your preference' },
+                    { time: '5:30 PM', text: 'Private sunset photo session' },
+                    { time: '6:00 PM', text: 'VIP camp - private seating, welcome drinks' },
+                    { time: '6:30 PM', text: 'Activities: camel ride, sandboarding, henna' },
+                    { time: '7:30 PM', text: 'Premium BBQ dinner with live entertainment' },
+                    { time: '9:30 PM', text: 'Private return transfer' }
+                ],
+                reviews: [
+                    { name: 'Sarah K.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=1', text: 'Best experience in Dubai! We were a family of 5 and having our own vehicle made it so special. The VIP camp treatment was worth every dirham. Our driver Mohammed was exceptional.' },
+                    { name: 'The Williams Family', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=23', text: 'Celebrated my parents\' anniversary here. Private setup, attentive service, and they even arranged a cake! Photos came out beautifully. Highly recommend for special occasions.' }
+                ]
+            },
+            'glamping': {
+                title: 'Luxury Desert Glamping',
+                duration: '22 hours • Private camp • Up to 4 guests',
+                rating: '5.0 (47 reviews)',
+                price: '3,999 AED for couple / 5,499 AED for 4 guests',
+                description: 'The ultimate romantic desert escape. Stay in a beautifully appointed luxury tent with king bed, private bathroom, and your own chef preparing gourmet meals. Watch the stars from your private deck and wake to a champagne breakfast.',
+                images: [
+                    'https://images.unsplash.com/photo-1631049035182-249067d7618e?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1504851149312-7a075b496cc7?q=80&w=600',
+                    'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=600'
+                ],
+                inclusions: ['Luxury tent with king bed', 'Private bathroom', 'Air conditioning', 'Private chef', '5-course gourmet dinner', 'Champagne breakfast', 'Private dune bashing', 'Stargazing telescope', 'Sunset yoga (optional)', 'Professional photos'],
+                timeline: [
+                    { time: '4:00 PM', text: 'Private pickup in luxury vehicle' },
+                    { time: '5:00 PM', text: 'Private dune bashing experience' },
+                    { time: '6:00 PM', text: 'Arrive at private camp, welcome champagne' },
+                    { time: '6:30 PM', text: 'Sunset viewing with canapés' },
+                    { time: '8:00 PM', text: '5-course dinner under the stars' },
+                    { time: '10:00 PM', text: 'Stargazing with telescope, bonfire' },
+                    { time: '8:00 AM', text: 'Wake up for sunrise, morning yoga' },
+                    { time: '9:30 AM', text: 'Champagne breakfast' },
+                    { time: '12:00 PM', text: 'Return to hotel' }
+                ],
+                reviews: [
+                    { name: 'James M.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=4', text: 'I proposed here. She said yes! The team helped me arrange everything - rose petals, champagne, the perfect moment under the stars. Absolutely magical experience.' },
+                    { name: 'Charlotte D.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=24', text: 'Worth every penny. The tent was more like a hotel room - AC, proper bathroom, incredibly comfortable bed. The food was restaurant quality. Best night of our trip.' }
+                ]
+            },
+            'heritage': {
+                title: 'Heritage Falcon Safari',
+                duration: '5 hours • Private • Up to 8 guests',
+                rating: '4.9 (63 reviews)',
+                price: '2,499 AED for the group',
+                description: 'Experience the proud tradition of Emirati falconry. Meet trained falcons, learn about this ancient art, and enjoy a safari in vintage Land Rovers. Includes an authentic Arabic feast in a traditional setting.',
+                images: [
+                    'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=600',
+                    'https://images.unsplash.com/photo-1549944850-84e00be4203b?q=80&w=600'
+                ],
+                inclusions: ['Falcon interaction & flying demonstration', 'Vintage Land Rover safari', 'Arabic coffee ceremony', 'Traditional Arabic feast', 'Henna & traditional dress photos', 'Camel ride', 'Cultural guide', 'Hotel pickup & drop-off'],
+                timeline: [
+                    { time: '3:00 PM', text: 'Pickup in vintage Land Rover' },
+                    { time: '4:00 PM', text: 'Arrive at heritage camp, Arabic welcome' },
+                    { time: '4:30 PM', text: 'Falconry demonstration and interaction' },
+                    { time: '5:30 PM', text: 'Desert drive and sunset viewing' },
+                    { time: '6:30 PM', text: 'Traditional activities, dress-up photos' },
+                    { time: '7:30 PM', text: 'Authentic Arabic feast' },
+                    { time: '8:30 PM', text: 'Return journey' }
+                ],
+                reviews: [
+                    { name: 'Ahmed R.', date: 'November 2024', avatar: 'https://i.pravatar.cc/100?img=7', text: 'Truly authentic experience. As someone from the region, I was impressed by how respectfully they presented our culture. The falcons were magnificent!' },
+                    { name: 'Jennifer & Tom', date: 'October 2024', avatar: 'https://i.pravatar.cc/100?img=25', text: 'This was the cultural experience we were hoping for. Not touristy at all - felt genuine. The food was incredible and the falcon show was unforgettable.' }
+                ]
+            },
+            'helicopter': {
+                title: 'Helicopter Desert Experience',
+                duration: '4 hours • Private helicopter • Up to 4 guests',
+                rating: '5.0 (23 reviews)',
+                price: '8,999 AED for the group',
+                description: 'The ultimate desert experience. Fly over Dubai\'s stunning coastline and land directly at your private desert camp. Enjoy champagne, gourmet dining, and an exclusive safari experience reserved for the most discerning guests.',
+                images: [
+                    'https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?q=80&w=1200',
+                    'https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=600',
+                    'https://images.unsplash.com/photo-1631049035182-249067d7618e?q=80&w=600'
+                ],
+                inclusions: ['30-min helicopter flight', 'Scenic Dubai & desert views', 'Private camp landing', 'Champagne reception', 'Gourmet canapés', 'Private dune bashing', 'Sunset viewing', 'Professional photography', 'Luxury return transfer'],
+                timeline: [
+                    { time: '3:30 PM', text: 'Arrive at helipad, safety briefing' },
+                    { time: '4:00 PM', text: 'Take off - scenic flight over Dubai' },
+                    { time: '4:30 PM', text: 'Land at private desert camp' },
+                    { time: '4:45 PM', text: 'Champagne reception' },
+                    { time: '5:15 PM', text: 'Private dune bashing' },
+                    { time: '6:00 PM', text: 'Sunset viewing with gourmet canapés' },
+                    { time: '7:00 PM', text: 'Luxury vehicle transfer back to Dubai' }
+                ],
+                reviews: [
+                    { name: 'Victoria L.', date: 'December 2024', avatar: 'https://i.pravatar.cc/100?img=10', text: 'Once in a lifetime. The helicopter views were incredible, and landing in the middle of the desert felt like a movie. Worth the splurge for a special celebration.' },
+                    { name: 'Robert & Diana', date: 'October 2024', avatar: 'https://i.pravatar.cc/100?img=26', text: 'We\'ve done helicopter tours before but this was next level. Landing at a private camp with champagne waiting... absolutely unforgettable anniversary gift.' }
+                ]
+            }
+        };
+
+        // Modal functions
+        function openModal(packageId) {
+            const pkg = packages[packageId];
+            if (!pkg) return;
+
+            document.getElementById('modalMainImg').src = pkg.images[0];
+            document.getElementById('modalImg2').src = pkg.images[1];
+            document.getElementById('modalImg3').src = pkg.images[2];
+            document.getElementById('modalTitle').textContent = pkg.title;
+            document.getElementById('modalDuration').textContent = pkg.duration;
+            document.getElementById('modalRating').textContent = '⭐ ' + pkg.rating;
+            document.getElementById('modalDescription').textContent = pkg.description;
+            document.getElementById('modalPrice').innerHTML = pkg.price.replace('AED', '<span>AED</span>');
+
+            // Inclusions
+            const inclusionsHtml = pkg.inclusions.map(item => `
+                <div class="modal-inclusion">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    ${item}
+                </div>
+            `).join('');
+            document.getElementById('modalInclusions').innerHTML = inclusionsHtml;
+
+            // Timeline
+            const timelineHtml = pkg.timeline.map(item => `
+                <div class="timeline-item">
+                    <div class="timeline-time">${item.time}</div>
+                    <div class="timeline-text">${item.text}</div>
+                </div>
+            `).join('');
+            document.getElementById('modalTimeline').innerHTML = timelineHtml;
+
+            // Reviews
+            const reviewsHtml = pkg.reviews.map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="${review.avatar}" alt="${review.name}">
+                        <div>
+                            <div class="review-name">${review.name}</div>
+                            <div class="review-date">${review.date}</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        ${'<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'.repeat(5)}
+                    </div>
+                    <p class="review-body">"${review.text}"</p>
+                </div>
+            `).join('');
+            document.getElementById('modalReviews').innerHTML = reviewsHtml;
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Filter functionality
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const allCards = document.querySelectorAll('.listing-card');
+
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', function() {
+                // Update active state
+                filterChips.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                allCards.forEach(card => {
+                    const type = card.dataset.type || '';
+                    const price = parseInt(card.dataset.price) || 0;
+
+                    let show = false;
+
+                    if (filter === 'all') {
+                        show = true;
+                    } else if (filter === 'under200') {
+                        show = price < 200;
+                    } else if (filter === 'under500') {
+                        show = price < 500;
+                    } else {
+                        show = type.includes(filter);
+                    }
+
+                    card.style.display = show ? 'block' : 'none';
+                });
+
+                updateCounts();
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+
+            allCards.forEach(card => {
+                const title = card.querySelector('.listing-title').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.listing-tag')).map(t => t.textContent.toLowerCase()).join(' ');
+
+                const matches = title.includes(query) || tags.includes(query);
+                card.style.display = matches ? 'block' : 'none';
+            });
+
+            // Reset filter chips
+            filterChips.forEach(c => c.classList.remove('active'));
+            filterChips[0].classList.add('active');
+
+            updateCounts();
+        });
+
+        function updateCounts() {
+            const valueVisible = document.querySelectorAll('#valueListings .listing-card[style="display: block"], #valueListings .listing-card:not([style])').length;
+            const luxuryVisible = document.querySelectorAll('#luxuryListings .listing-card[style="display: block"], #luxuryListings .listing-card:not([style])').length;
+
+            // Recount visible cards
+            let valueCount = 0;
+            let luxuryCount = 0;
+
+            document.querySelectorAll('#valueListings .listing-card').forEach(card => {
+                if (card.style.display !== 'none') valueCount++;
+            });
+
+            document.querySelectorAll('#luxuryListings .listing-card').forEach(card => {
+                if (card.style.display !== 'none') luxuryCount++;
+            });
+
+            document.getElementById('valueCount').textContent = valueCount + ' package' + (valueCount !== 1 ? 's' : '');
+            document.getElementById('luxuryCount').textContent = luxuryCount + ' package' + (luxuryCount !== 1 ? 's' : '');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">Golden<span>Sands</span></div>
+            <div class="footer-links">
+                <a href="#valueSection">Packages</a>
+                <a href="https://wa.me/971508591060">Contact</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="footer-copyright">
+                © 2026 Golden Sands Adventures. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
