@@ -1211,14 +1211,19 @@
             }
 
             .modal-gallery {
-                grid-template-columns: 1fr;
-                aspect-ratio: 16/10;
+                display: block;
+                aspect-ratio: auto;
+                height: auto;
+            }
+
+            .modal-gallery > img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
             }
 
             .modal-gallery-side {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 4px;
+                display: none;
             }
 
             .modal-inclusions {
@@ -1363,8 +1368,20 @@
             }
 
             .modal-gallery {
-                aspect-ratio: 4/3;
-                max-height: 250px;
+                display: block;
+                aspect-ratio: auto;
+                height: auto;
+                max-height: none;
+            }
+
+            .modal-gallery > img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .modal-gallery-side {
+                display: none;
             }
 
             .modal-content {
