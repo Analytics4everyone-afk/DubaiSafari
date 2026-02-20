@@ -3231,6 +3231,20 @@
             updateCounts();
         });
 
+        // Meta Pixel: Track WhatsApp clicks as Lead events
+        document.querySelectorAll('a[href*="wa.me"], .modal-book').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: document.getElementById('modalTitle')?.textContent || 'Desert Safari',
+                        content_category: 'WhatsApp Inquiry',
+                        value: parseFloat((document.getElementById('modalPrice')?.textContent || '0').replace(/[^0-9.]/g, '')) || 0,
+                        currency: 'AED'
+                    });
+                }
+            });
+        });
+
         function updateCounts() {
             const valueVisible = document.querySelectorAll('#valueListings .listing-card[style="display: block"], #valueListings .listing-card:not([style])').length;
             const luxuryVisible = document.querySelectorAll('#luxuryListings .listing-card[style="display: block"], #luxuryListings .listing-card:not([style])').length;

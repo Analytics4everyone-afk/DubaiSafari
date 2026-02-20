@@ -325,5 +325,14 @@
             <p class="footer-copyright">&copy; 2026 Dubai Wow Tours. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', { content_name: 'Desert Safari', content_category: 'WhatsApp Inquiry', currency: 'AED' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
