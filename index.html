@@ -863,7 +863,7 @@
             position: fixed;
             inset: 0;
             background: rgba(0,0,0,0.5);
-            z-index: 1000;
+            z-index: 1001;
             display: none;
             align-items: center;
             justify-content: center;
@@ -2069,15 +2069,279 @@
             }
 
             .whatsapp-float {
-                bottom: 16px;
-                right: 16px;
-                width: 54px;
-                height: 54px;
+                display: none;
+            }
+        }
+        /* ===== CRO Feature Styles ===== */
+
+        /* Feature 1: Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(90deg, #e53e3e, #dd6b20);
+            color: white;
+            text-align: center;
+            padding: 10px 40px 10px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+        .urgency-banner-close {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px 8px;
+            opacity: 0.8;
+            line-height: 1;
+        }
+        .urgency-banner-close:hover { opacity: 1; }
+
+        /* Feature 2: Price Anchoring */
+        .price-was {
+            text-decoration: line-through;
+            color: var(--gray-400);
+            font-weight: 400;
+            font-size: 14px;
+            margin-right: 4px;
+        }
+        .modal-price .price-was {
+            font-size: 16px;
+        }
+
+        /* Feature 3: Mobile Trust Strip */
+        .mobile-trust-strip {
+            display: none;
+            background: var(--gold-light);
+            padding: 10px 16px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .mobile-trust-strip::-webkit-scrollbar { display: none; }
+        .mobile-trust-strip-inner {
+            display: inline-flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--black);
+        }
+        .mobile-trust-strip-inner span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+            .mobile-trust-strip { display: block; }
+        }
+
+        /* Feature 4: Sticky WhatsApp CTA Bar */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: 10px 16px;
+            padding-bottom: calc(10px + env(safe-area-inset-bottom));
+            z-index: 999;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        .sticky-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .sticky-cta-price {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+        .sticky-cta-price strong {
+            display: block;
+            font-size: 18px;
+            color: var(--black);
+        }
+        .sticky-cta-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .sticky-cta-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+        @media (max-width: 768px) {
+            .sticky-cta { display: block; }
+        }
+
+        /* Feature 5: Social Proof Toasts */
+        .social-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 998;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 14px 18px;
+            font-size: 13px;
+            line-height: 1.4;
+            max-width: 320px;
+            transform: translateX(-120%);
+            transition: transform 0.4s ease;
+            border-left: 3px solid var(--green);
+        }
+        .social-toast.show { transform: translateX(0); }
+        .social-toast-text { color: var(--gray-600); }
+        .social-toast-text strong { color: var(--black); }
+        @media (max-width: 768px) {
+            .social-toast {
+                top: 70px;
+                bottom: auto;
+                left: 12px;
+                right: 12px;
+                max-width: none;
+                transform: translateY(-120%);
+            }
+            .social-toast.show { transform: translateY(0); }
+        }
+
+        /* Feature 6: Exit-Intent Popup */
+        .exit-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1002;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .exit-overlay.active { display: flex; }
+        .exit-popup {
+            background: var(--white);
+            border-radius: var(--radius);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 32px;
+            position: relative;
+            animation: exitPopIn 0.3s ease;
+        }
+        @keyframes exitPopIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .exit-popup-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--gray-400);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .exit-popup h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .exit-popup .discount-code {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 20px;
+            padding: 8px 20px;
+            border-radius: 6px;
+            letter-spacing: 2px;
+            margin: 12px 0 16px;
+            border: 2px dashed var(--gold);
+        }
+        .exit-popup p {
+            color: var(--gray-600);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .exit-popup-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .exit-popup-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        }
+        .exit-popup-cta svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        @media (max-width: 768px) {
+            .exit-overlay {
+                align-items: flex-end;
+                padding: 0;
+            }
+            .exit-popup {
+                border-radius: 16px 16px 0 0;
+                max-width: 100%;
+                padding: 32px 24px;
+                padding-bottom: calc(32px + env(safe-area-inset-bottom));
+                animation: exitSlideUp 0.3s ease;
+            }
+            @keyframes exitSlideUp {
+                from { transform: translateY(100%); }
+                to { transform: translateY(0); }
             }
         }
     </style>
 </head>
 <body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner" id="urgencyBanner">
+        Limited Slots Available &mdash; Book Today &amp; Save 40%
+        <button class="urgency-banner-close" onclick="document.getElementById('urgencyBanner').style.display='none';sessionStorage.setItem('urgencyDismissed','1')" aria-label="Close">&times;</button>
+    </div>
+    <script>if(sessionStorage.getItem('urgencyDismissed'))document.getElementById('urgencyBanner').style.display='none';</script>
+
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
@@ -2136,6 +2400,17 @@
         </div>
     </div>
 
+    <!-- Mobile Trust Strip -->
+    <div class="mobile-trust-strip">
+        <div class="mobile-trust-strip-inner">
+            <span>4.9 on Google</span>
+            <span>7,000+ Tourists</span>
+            <span>Featured in TimeOut Dubai</span>
+            <span>Free Cancellation</span>
+            <span>Free Pickup</span>
+        </div>
+    </div>
+
     <!-- Trust Bar -->
     <div class="trust-bar">
         <div class="trust-item">
@@ -2145,7 +2420,7 @@
                 </svg>
             </div>
             <div class="trust-text">
-                <strong>4,200+ Happy Guests</strong>
+                <strong>7,000+ Happy Guests</strong>
                 <span>Last 12 months</span>
             </div>
         </div>
@@ -2227,7 +2502,7 @@
                             <span class="listing-tag">+3 more</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">79 AED <span>/ person</span></div>
+                            <div class="listing-price"><span class="price-was">149 AED</span> 79 AED <span>/ person</span></div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2260,7 +2535,7 @@
                             <span class="listing-tag">+4 more</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">550 AED <span>/ vehicle</span></div>
+                            <div class="listing-price"><span class="price-was">899 AED</span> 550 AED <span>/ vehicle</span></div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2292,7 +2567,7 @@
                             <span class="listing-tag">Private car</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">650 AED <span>/ vehicle</span></div>
+                            <div class="listing-price"><span class="price-was">1,100 AED</span> 650 AED <span>/ vehicle</span></div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2324,7 +2599,7 @@
                             <span class="listing-tag">Photos</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">From 150 AED</div>
+                            <div class="listing-price"><span class="price-was">250 AED</span> From 150 AED</div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2357,7 +2632,7 @@
                             <span class="listing-tag">Photos</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">From 800 AED</div>
+                            <div class="listing-price"><span class="price-was">1,400 AED</span> From 800 AED</div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2390,7 +2665,7 @@
                             <span class="listing-tag">+4 more</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">250 AED <span>/ person</span></div>
+                            <div class="listing-price"><span class="price-was">449 AED</span> 250 AED <span>/ person</span></div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2423,7 +2698,7 @@
                             <span class="listing-tag">+5 more</span>
                         </div>
                         <div class="listing-footer">
-                            <div class="listing-price">1500 AED <span>/ vehicle</span></div>
+                            <div class="listing-price"><span class="price-was">2,500 AED</span> 1500 AED <span>/ vehicle</span></div>
                             <button class="listing-book">Book Now</button>
                         </div>
                     </div>
@@ -2901,6 +3176,20 @@
         </div>
     </div>
 
+    <!-- Sticky WhatsApp CTA Bar (mobile) -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-inner">
+            <div class="sticky-cta-price">
+                From
+                <strong>79 AED</strong>
+            </div>
+            <a href="https://wa.me/971545592053?text=Hi!%20I'm%20interested%20in%20booking%20a%20desert%20safari" class="sticky-cta-btn" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Book Now on WhatsApp
+            </a>
+        </div>
+    </div>
+
     <script>
         // Package data - Updated with actual offerings
         const packages = {
@@ -2908,6 +3197,7 @@
                 title: 'Standard Evening Safari',
                 duration: '7 hours • Pickup 2:00-3:30 PM • Drop 9:30 PM',
                 rating: '4.8 (1,245 reviews)',
+                originalPrice: '149 AED per person',
                 price: '79 AED per person',
                 description: 'Our best value package! Experience the magic of the Arabian desert with thrilling dune bashing in a 4x4 Land Cruiser. Enjoy 2 professional belly dancers, Tanoura dance, fire shows on the dunes and stage, camel ride, sand-boarding, henna tattoos, Arabic dress photoshoot, and a delicious BBQ buffet dinner with unlimited drinks.',
                 images: [
@@ -2935,6 +3225,7 @@
                 title: 'Private Evening Safari',
                 duration: '7 hours • Private vehicle • Up to 6-7 people',
                 rating: '4.9 (876 reviews)',
+                originalPrice: '899 AED per vehicle',
                 price: '550 AED per vehicle',
                 description: 'Enjoy our complete evening safari with your own private 4x4 Land Cruiser. All the same amazing inclusions as standard - dune bashing, 2 belly dancers, Tanoura, fire shows, camel ride, sand-boarding, henna, Arabic dress photos, BBQ dinner - but with the privacy and flexibility for your group.',
                 images: [
@@ -2961,6 +3252,7 @@
                 title: 'Morning Desert Safari',
                 duration: '3 hours • Sunrise • Private vehicle',
                 rating: '4.7 (423 reviews)',
+                originalPrice: '1,100 AED per vehicle',
                 price: '650 AED per vehicle (up to 7 people)',
                 description: 'Experience the serene beauty of the Dubai desert in the cool morning hours. Watch the sunrise paint the dunes golden as you enjoy thrilling dune bashing. Perfect for photographers and early birds. Private vehicle experience with stunning photo opportunities.',
                 images: [
@@ -2985,6 +3277,7 @@
                 title: 'Quad Bike Adventure',
                 duration: '30-60 mins • Multiple time slots',
                 rating: '4.8 (567 reviews)',
+                originalPrice: '250 AED',
                 price: 'Starting from 150 AED',
                 description: 'Take control and ride your own quad bike across the stunning Dubai desert dunes. Perfect for adventure seekers who want to experience the desert at their own pace. Full safety briefing and equipment provided.',
                 images: [
@@ -3009,6 +3302,7 @@
                 title: 'Dune Buggy Adventure',
                 duration: '30-60 mins • Self-drive experience',
                 rating: '4.9 (312 reviews)',
+                originalPrice: '1,400 AED',
                 price: 'Starting from 800 AED',
                 description: 'Drive your own powerful dune buggy across the desert terrain. These high-performance buggies offer the ultimate desert adventure. Perfect for thrill-seekers looking for an exhilarating experience. No prior experience needed.',
                 images: [
@@ -3033,6 +3327,7 @@
                 title: 'Luxury Evening Safari',
                 duration: '7 hours • VIP Premium Experience',
                 rating: '4.9 (289 reviews)',
+                originalPrice: '449 AED per person',
                 price: '250 AED per person',
                 description: 'The same amazing activities as our standard safari but with VIP treatment! Enjoy premium sofa seating inside the camp with dedicated waiter service. All activities included: dune bashing, 2 belly dancers, Tanoura, fire shows, camel ride, sand-boarding, henna, Arabic dress photos, plus premium BBQ buffet.',
                 images: [
@@ -3060,6 +3355,7 @@
                 title: 'Luxury Private Safari',
                 duration: '7 hours • Private Vehicle • Up to 6 people',
                 rating: '5.0 (156 reviews)',
+                originalPrice: '2,500 AED per vehicle',
                 price: '1500 AED per vehicle',
                 description: 'The ultimate VIP desert experience with your own private Land Cruiser! Enjoy all the premium activities with exclusive privacy for your group. Perfect for special occasions, family celebrations, honeymoons, or groups wanting the most exclusive experience with dedicated waiter service.',
                 images: [
@@ -3097,7 +3393,14 @@
             document.getElementById('modalDuration').textContent = pkg.duration;
             document.getElementById('modalRating').textContent = '⭐ ' + pkg.rating;
             document.getElementById('modalDescription').textContent = pkg.description;
-            document.getElementById('modalPrice').innerHTML = pkg.price.replace('AED', '<span>AED</span>');
+            var priceHtml = pkg.originalPrice
+                ? '<span class="price-was">' + pkg.originalPrice + '</span> ' + pkg.price.replace('AED', '<span>AED</span>')
+                : pkg.price.replace('AED', '<span>AED</span>');
+            document.getElementById('modalPrice').innerHTML = priceHtml;
+
+            // Hide sticky CTA when modal is open
+            var stickyCta = document.getElementById('stickyCta');
+            if (stickyCta) stickyCta.style.display = 'none';
 
             // Inclusions
             const inclusionsHtml = pkg.inclusions.map(item => `
@@ -3144,6 +3447,9 @@
         function closeModal() {
             document.getElementById('modalOverlay').classList.remove('active');
             document.body.style.overflow = '';
+            // Restore sticky CTA on mobile
+            var stickyCta = document.getElementById('stickyCta');
+            if (stickyCta && window.innerWidth < 768) stickyCta.style.display = '';
         }
 
         // FAQ toggle functionality
@@ -3267,6 +3573,122 @@
             document.getElementById('valueCount').textContent = valueCount + ' package' + (valueCount !== 1 ? 's' : '');
             document.getElementById('luxuryCount').textContent = luxuryCount + ' package' + (luxuryCount !== 1 ? 's' : '');
         }
+    </script>
+
+    <!-- Social Proof Toast -->
+    <div class="social-toast" id="socialToast">
+        <div class="social-toast-text" id="socialToastText"></div>
+    </div>
+
+    <!-- Exit-Intent Popup -->
+    <div class="exit-overlay" id="exitOverlay">
+        <div class="exit-popup">
+            <button class="exit-popup-close" onclick="document.getElementById('exitOverlay').classList.remove('active')" aria-label="Close">&times;</button>
+            <h3>Wait! Get 10% Off</h3>
+            <div class="discount-code">DESERT10</div>
+            <p>Use this code when you message us on WhatsApp to get 10% off any desert safari package.</p>
+            <a href="https://wa.me/971545592053?text=Hi!%20I%20have%20discount%20code%20DESERT10%20and%20I'd%20like%20to%20book%20a%20desert%20safari" class="exit-popup-cta" id="exitPopupCta" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Claim 10% Off on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Feature 5: Social Proof Toasts IIFE -->
+    <script>
+    (function() {
+        var toast = document.getElementById('socialToast');
+        var toastText = document.getElementById('socialToastText');
+        var modal = document.getElementById('modalOverlay');
+        var bookings = [
+            { name: 'Sarah', city: 'London', pkg: 'Evening Safari' },
+            { name: 'James', city: 'Sydney', pkg: 'Private Safari' },
+            { name: 'Aisha', city: 'Riyadh', pkg: 'Dune Buggy' },
+            { name: 'Marco', city: 'Milan', pkg: 'Luxury Safari' },
+            { name: 'Priya', city: 'Mumbai', pkg: 'Quad Bike' },
+            { name: 'Chen Wei', city: 'Shanghai', pkg: 'Evening Safari' },
+            { name: 'Emma', city: 'New York', pkg: 'Morning Safari' },
+            { name: 'Dmitri', city: 'Moscow', pkg: 'Private Safari' },
+            { name: 'Fatima', city: 'Dubai', pkg: 'Luxury Private Safari' },
+            { name: 'Tom', city: 'Berlin', pkg: 'Evening Safari' }
+        ];
+        var times = ['3 min', '7 min', '12 min', '18 min', '25 min', '34 min', '42 min', '51 min', '1 hour', '2 hours'];
+        var idx = 0;
+
+        function showToast() {
+            if (modal && modal.classList.contains('active')) return;
+            var b = bookings[idx % bookings.length];
+            var t = times[idx % times.length];
+            toastText.innerHTML = '<strong>' + b.name + ' from ' + b.city + '</strong> just booked ' + b.pkg + ' &mdash; ' + t + ' ago';
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 4500);
+            idx++;
+        }
+
+        setTimeout(showToast, 5000);
+        setInterval(showToast, 18000);
+    })();
+    </script>
+
+    <!-- Feature 6: Exit-Intent Popup IIFE -->
+    <script>
+    (function() {
+        var shown = sessionStorage.getItem('exitShown');
+        var overlay = document.getElementById('exitOverlay');
+        var modal = document.getElementById('modalOverlay');
+        if (shown || !overlay) return;
+
+        function showExit() {
+            if (shown) return;
+            if (modal && modal.classList.contains('active')) return;
+            shown = true;
+            sessionStorage.setItem('exitShown', '1');
+            overlay.classList.add('active');
+        }
+
+        // Desktop: mouse leaves viewport top
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 5 && e.relatedTarget == null) {
+                showExit();
+            }
+        });
+
+        // Mobile: rapid scroll-up detection
+        var lastY = 0;
+        var lastTime = 0;
+        window.addEventListener('scroll', function() {
+            var y = window.scrollY;
+            var now = Date.now();
+            if (y > 200 && lastY - y > 300 && now - lastTime < 500) {
+                showExit();
+            }
+            lastY = y;
+            lastTime = now;
+        });
+
+        // Close on overlay click
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) overlay.classList.remove('active');
+        });
+
+        // Meta Pixel Lead event for exit popup CTA
+        var exitCta = document.getElementById('exitPopupCta');
+        if (exitCta) {
+            exitCta.addEventListener('click', function(e) {
+                e.preventDefault();
+                var url = this.href;
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Exit Intent - 10% Discount Offer',
+                        content_category: 'WhatsApp Inquiry',
+                        value: 0,
+                        currency: 'AED'
+                    });
+                }
+                setTimeout(function() { window.open(url, '_blank'); }, 300);
+            });
+        }
+    })();
     </script>
 
 </body>
