@@ -327,10 +327,13 @@
     </footer>
     <script>
         document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var url = this.href;
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'Lead', { content_name: 'Desert Safari', content_category: 'WhatsApp Inquiry', currency: 'AED' });
                 }
+                setTimeout(function() { window.open(url, '_blank'); }, 300);
             });
         });
     </script>

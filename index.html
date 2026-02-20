@@ -3232,8 +3232,10 @@
         });
 
         // Meta Pixel: Track WhatsApp clicks as Lead events
-        document.querySelectorAll('a[href*="wa.me"], .modal-book').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var url = this.href;
                 if (typeof fbq !== 'undefined') {
                     fbq('track', 'Lead', {
                         content_name: document.getElementById('modalTitle')?.textContent || 'Desert Safari',
@@ -3242,6 +3244,7 @@
                         currency: 'AED'
                     });
                 }
+                setTimeout(function() { window.open(url, '_blank'); }, 300);
             });
         });
 
